@@ -1,0 +1,96 @@
+ <div class="jumbotron">
+     <div class="contianer ">
+         <div class="row">
+             <div class="col-sm-5">
+                <div class="container">
+                  <table class="table table-success table-striped text-center">
+                       <thead class="table bg-success">
+                         
+                         <th>Post</th>
+                         <th>Title</th>
+                        
+                  </thead>
+           
+                      <tr *ngFor="let data of Testdata  | slice:0:08; "  class="text-center bg-muted">
+
+                         
+                        <button class=" btn-outline-info" (click)="viewProfile(data.id)">
+            
+                
+                          <td>{{data.id}}</td>
+                         
+
+                          
+
+                        </button>
+
+                          <td>{{data.title | uppercase }}</td>
+                          
+                          
+                        </tr>
+                       
+
+                        <tr *ngFor= "let Color of Colors">
+                          <button class=" btn-outline-info"> 
+                            <ol class="badge badges"  (click)="viewProfile(data)">
+                            New
+                            
+                            <br>
+                              
+                            </ol>
+                          </button> 
+                          
+                          
+                          <hr>
+                  
+                          <td> {{Color}}</td>
+                        </tr> 
+
+
+                        
+                      </table>
+                      <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Add User</button> -->
+
+                      <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Add New</button>
+                     
+                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add New User</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <label for="c">Title:</label>
+                              <input type="text" id="c" name="data" placeholder="display User" class="form-control" #val>
+                              <br>
+
+                              <label for="img"> Image:</label>
+                              <input type="file" name="image" id="img" #val >
+                              
+                              <button class="btn btn-success"  (click)="addColor(val)">Add User</button> 
+                            </div>
+                          
+                            
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+
+                  
+                 
+                 </div>
+             </div>
+             <div class="col-sm-7"></div>
+         </div>
+      </div>
+    </div>
+
+
+  
+
