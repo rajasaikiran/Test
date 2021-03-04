@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {TestService} from '../test.service'
 import {Router} from '@angular/router'
+
 
 
 
@@ -18,22 +19,17 @@ export class HomeComponent implements OnInit {
   Testdata:any[] = [];
  
   Colors : string[]=[];
+  
 
   // Add colors to the empty array
     addColor(val)
     {
       
     let enteredcolor = (val.value)
-      
-    
-     
-    this.Colors.push(enteredcolor)
-    
-    
+    this.Colors.push(enteredcolor) 
   }
-
-
-
+   
+ 
  
   constructor( private rt:Router, private Ts:TestService) { }
 
@@ -58,7 +54,7 @@ export class HomeComponent implements OnInit {
    viewProfile(id){
     console.log(id);
     
-   this.rt.navigateByUrl("/viewuser/"+ id)
+   this.rt.navigateByUrl(`/viewuser/${id}` )
 
   
   }

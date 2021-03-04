@@ -15,13 +15,7 @@
 
                          
                         <button class=" btn-outline-info" (click)="viewProfile(data.id)">
-            
-                
                           <td>{{data.id}}</td>
-                         
-
-                          
-
                         </button>
 
                           <td>{{data.title | uppercase }}</td>
@@ -32,8 +26,9 @@
 
                         <tr *ngFor= "let Color of Colors">
                           <button class=" btn-outline-info"> 
-                            <ol class="badge badges"  (click)="viewProfile(data)">
-                            New
+                            <ol class="badge badges">
+                            
+                           new
                             
                             <br>
                               
@@ -66,9 +61,12 @@
                               <label for="c">Title:</label>
                               <input type="text" id="c" name="data" placeholder="display User" class="form-control" #val>
                               <br>
+                              <label for="i">Id:</label>
+                              <input type="number" id="i" name="data" placeholder="display Id" class="form-control" #val>
+                              <br>
 
                               <label for="img"> Image:</label>
-                              <input type="file" name="image" id="img" #val >
+                              <input type="file" name="image" id="img" >
                               
                               <button class="btn btn-success"  (click)="addColor(val)">Add User</button> 
                             </div>

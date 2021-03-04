@@ -18,7 +18,7 @@ export class TestService {
 
 
 //displaying single user onClick
-  getOneUser(id):Observable<any[]>{
+  getOneUser(id):Observable<object>{
     return this.Hc.get<any[]>(`https://jsonplaceholder.typicode.com/posts/${id}`)
     
    }
